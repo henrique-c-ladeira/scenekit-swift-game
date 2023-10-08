@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1981FE922AD30D6E00D6F0FF /* SCNCamera+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */; };
+		1981FE932AD30F5D00D6F0FF /* SCNCamera+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */; };
+		1981FE952AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */; };
+		1981FE962AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */; };
 		19B382D52ACF6A4D00BDB37C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B382D42ACF6A4D00BDB37C /* AppDelegate.swift */; };
 		19B382D72ACF6A4D00BDB37C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B382D62ACF6A4D00BDB37C /* GameViewController.swift */; };
 		19B382DA2ACF6A4D00BDB37C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19B382D82ACF6A4D00BDB37C /* Main.storyboard */; };
@@ -23,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNCamera+Extensions.swift"; sourceTree = "<group>"; };
+		1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
 		19B382CA2ACF6A4D00BDB37C /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		19B382CB2ACF6A4D00BDB37C /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
 		19B382CC2ACF6A4D00BDB37C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1981FE902AD30D3700D6F0FF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */,
+				1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		19B382C42ACF6A4C00BDB37C = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +84,7 @@
 		19B382C92ACF6A4D00BDB37C /* runner Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1981FE902AD30D3700D6F0FF /* Extensions */,
 				19B382CA2ACF6A4D00BDB37C /* GameController.swift */,
 				19B382CB2ACF6A4D00BDB37C /* Art.scnassets */,
 				19B382CC2ACF6A4D00BDB37C /* Assets.xcassets */,
@@ -211,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B382D72ACF6A4D00BDB37C /* GameViewController.swift in Sources */,
+				1981FE922AD30D6E00D6F0FF /* SCNCamera+Extensions.swift in Sources */,
 				19B382EC2ACF6A4D00BDB37C /* GameController.swift in Sources */,
+				1981FE952AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */,
 				19B382D52ACF6A4D00BDB37C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B382E72ACF6A4D00BDB37C /* GameViewController.swift in Sources */,
+				1981FE932AD30F5D00D6F0FF /* SCNCamera+Extensions.swift in Sources */,
 				19B382ED2ACF6A4D00BDB37C /* GameController.swift in Sources */,
+				1981FE962AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */,
 				19B382E52ACF6A4D00BDB37C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
