@@ -18,39 +18,43 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     let scene: SCNScene
     let sceneRenderer: SCNSceneRenderer
     
-    let player: SCNNode
+    let player: Player
     let camera: SCNNode
     
     init(sceneRenderer renderer: SCNSceneRenderer) {
         sceneRenderer = renderer
         scene = SCNScene(named: "Art.scnassets/stage1.scn")!
         
-        self.player = scene.rootNode.childNode(withName: "player", recursively: true)!
+        let blockScene = SCNScene(named: "Art.scnassets/obstacle.scn")!
+        
         self.camera = scene.rootNode.childNode(withName: "camera", recursively: true)!
+        player = Player(from: "player.scn")
         
         super.init()
         
         sceneRenderer.delegate = self
         
-        camera.anchor(to: player)
+        camera.anchor(to: player.node)
         
         let floor = scene.rootNode.childNode(withName: "plane", recursively: true)!
+        
         floor.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry: floor.geometry!))
         
+        let block = blockScene.rootNode.childNode(withName: "obstacle", recursively: true)!
         
-        for index in (0...10) {
-            let block = scene.rootNode.childNode(withName: "blocker", recursively: true)!
+        for index in (0...100) {
             let newBlock = SCNNode(geometry: block.geometry);
-            newBlock.position = block.position
-            newBlock.position.z = block.position.z + 5 * Float(index)
+            newBlock.name = "block\(index)"
+            newBlock.rotation = SCNVector4(Double.pi,0,Double.pi,Double.pi)
+            newBlock.position.x = CGFloat.random(in: -1...1)
+            newBlock.position.y = 0.5
+            newBlock.position.z =  10 * CGFloat(index + 1)
             newBlock.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: newBlock.geometry!))
             scene.rootNode.addChildNode(newBlock)
         }
         
-        player.runAction(SCNAction.repeatForever(SCNAction.moveBy(x: 0.01, y: 0, z: 3, duration: 1)))
-        player.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: player.geometry!))
         
-        
+        player.addToScene(scene)
         sceneRenderer.scene = scene
     }
     
@@ -82,9 +86,14 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         }
     }
     
+    
+    
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         // Called before each frame is rendered
-        camera.anchor(to: player)
+        if(player.node.position.z > 80) {
+            player.node.position.z = 0
+        }
+        camera.anchor(to: player.node)
     }
 
 }

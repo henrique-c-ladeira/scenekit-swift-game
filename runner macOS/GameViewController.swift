@@ -26,6 +26,7 @@ class GameViewController: NSViewController {
         
         // Show statistics such as fps and timing information
         self.gameView.showsStatistics = true
+        self.gameView.debugOptions = SCNDebugOptions(arrayLiteral: .showPhysicsShapes)
         
         // Configure the view
         self.gameView.backgroundColor = NSColor.black
@@ -42,6 +43,18 @@ class GameViewController: NSViewController {
         // Highlight the clicked nodes
         let p = gestureRecognizer.location(in: gameView)
         gameController.highlightNodes(atPoint: p)
+    }
+    @objc
+    override func keyDown(with event: NSEvent) {
+        print(event.keyCode)
+        switch (event.keyCode) {
+        case 0: gameController.player.moveLeft(); break
+        case 2: gameController.player.moveRight(); break
+        case 13: gameController.player.jump(); break
+        default:
+            break
+        }
+            
     }
     
 }
