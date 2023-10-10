@@ -17,6 +17,8 @@ class Camera {
 //        guard let camera = node.camera else { camera = SCNCamera(); return }
 //        self.camera = camera
         node = SCNNode()
+        node.position = SCNVector3(0,0,0)
+        node.eulerAngles = SCNVector3(0, Double.pi, 0)
         camera  = SCNCamera()
         node.camera = camera
     }
@@ -27,6 +29,7 @@ class Camera {
     }
     
     func anchor(to node: SCNNode) {
-        node.anchor(to: node)
+        self.node.anchor(to: node)
+        
     }
 }

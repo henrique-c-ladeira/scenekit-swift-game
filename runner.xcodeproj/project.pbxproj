@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		192E296A2AD4C493003B4EEF /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E29692AD4C493003B4EEF /* Camera.swift */; };
 		192E296B2AD4C493003B4EEF /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E29692AD4C493003B4EEF /* Camera.swift */; };
+		192E29702AD4E227003B4EEF /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E296F2AD4E227003B4EEF /* Stage.swift */; };
+		192E29712AD4E227003B4EEF /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E296F2AD4E227003B4EEF /* Stage.swift */; };
 		193006F42AD4B38B0097B292 /* Model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 193006F32AD4B38B0097B292 /* Model.scnassets */; };
 		193006F52AD4B38B0097B292 /* Model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 193006F32AD4B38B0097B292 /* Model.scnassets */; };
 		1981FE922AD30D6E00D6F0FF /* SCNCamera+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */; };
@@ -36,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		192E29692AD4C493003B4EEF /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		192E296F2AD4E227003B4EEF /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		193006F32AD4B38B0097B292 /* Model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Model.scnassets; sourceTree = "<group>"; };
 		1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNCamera+Extensions.swift"; sourceTree = "<group>"; };
 		1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 			children = (
 				1981FE902AD30D3700D6F0FF /* Extensions */,
 				19B382CA2ACF6A4D00BDB37C /* GameController.swift */,
+				192E296F2AD4E227003B4EEF /* Stage.swift */,
 				1981FE9A2AD345EE00D6F0FF /* Player.swift */,
 				19826F2B2AD38F230068E15A /* Actor.swift */,
 				192E29692AD4C493003B4EEF /* Camera.swift */,
@@ -247,6 +251,7 @@
 				192E296A2AD4C493003B4EEF /* Camera.swift in Sources */,
 				19B382D72ACF6A4D00BDB37C /* GameViewController.swift in Sources */,
 				1981FE922AD30D6E00D6F0FF /* SCNCamera+Extensions.swift in Sources */,
+				192E29702AD4E227003B4EEF /* Stage.swift in Sources */,
 				19B382EC2ACF6A4D00BDB37C /* GameController.swift in Sources */,
 				19826F2C2AD38F230068E15A /* Actor.swift in Sources */,
 				1981FE952AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */,
@@ -262,6 +267,7 @@
 				192E296B2AD4C493003B4EEF /* Camera.swift in Sources */,
 				19B382E72ACF6A4D00BDB37C /* GameViewController.swift in Sources */,
 				1981FE932AD30F5D00D6F0FF /* SCNCamera+Extensions.swift in Sources */,
+				192E29712AD4E227003B4EEF /* Stage.swift in Sources */,
 				19B382ED2ACF6A4D00BDB37C /* GameController.swift in Sources */,
 				19826F2D2AD38F230068E15A /* Actor.swift in Sources */,
 				1981FE962AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */,
