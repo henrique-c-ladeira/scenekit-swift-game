@@ -12,14 +12,14 @@ class Player: Actor {
     let node: SCNNode
     
     init(from scene: String) {
-        let playerScene = SCNScene(named: "Art.scnassets/\(scene)")!
-        let node = playerScene.rootNode.childNode(withName: "shipMesh", recursively: true)!
+        let playerScene = SCNScene(named: "Model.scnassets/\(scene)")!
+        let node = playerScene.rootNode.childNode(withName: "node", recursively: true)!
         let playerCollisionBox = playerScene.rootNode.childNode(withName: "collision", recursively: true)!
         
         self.node = node;
         
         node.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(geometry: playerCollisionBox.geometry!))
-        node.position = SCNVector3(x: 0, y: 0.2, z: 0)
+        node.position = SCNVector3(x: 0, y: 0, z: 0)
         
         node.runAction(SCNAction.repeatForever(SCNAction.moveBy(x: 0, y: 0, z: 5, duration: 1)))
     }

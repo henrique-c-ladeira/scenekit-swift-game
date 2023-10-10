@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		192E296A2AD4C493003B4EEF /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E29692AD4C493003B4EEF /* Camera.swift */; };
+		192E296B2AD4C493003B4EEF /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192E29692AD4C493003B4EEF /* Camera.swift */; };
+		193006F42AD4B38B0097B292 /* Model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 193006F32AD4B38B0097B292 /* Model.scnassets */; };
+		193006F52AD4B38B0097B292 /* Model.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 193006F32AD4B38B0097B292 /* Model.scnassets */; };
 		1981FE922AD30D6E00D6F0FF /* SCNCamera+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */; };
 		1981FE932AD30F5D00D6F0FF /* SCNCamera+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */; };
 		1981FE952AD32ADB00D6F0FF /* SCNNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */; };
@@ -31,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192E29692AD4C493003B4EEF /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		193006F32AD4B38B0097B292 /* Model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Model.scnassets; sourceTree = "<group>"; };
 		1981FE912AD30D6E00D6F0FF /* SCNCamera+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNCamera+Extensions.swift"; sourceTree = "<group>"; };
 		1981FE942AD32ADB00D6F0FF /* SCNNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Extensions.swift"; sourceTree = "<group>"; };
 		1981FE9A2AD345EE00D6F0FF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 				19B382CA2ACF6A4D00BDB37C /* GameController.swift */,
 				1981FE9A2AD345EE00D6F0FF /* Player.swift */,
 				19826F2B2AD38F230068E15A /* Actor.swift */,
+				192E29692AD4C493003B4EEF /* Camera.swift */,
+				193006F32AD4B38B0097B292 /* Model.scnassets */,
 				19B382CB2ACF6A4D00BDB37C /* Art.scnassets */,
 				19B382CC2ACF6A4D00BDB37C /* Assets.xcassets */,
 			);
@@ -211,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19B382DA2ACF6A4D00BDB37C /* Main.storyboard in Resources */,
+				193006F42AD4B38B0097B292 /* Model.scnassets in Resources */,
 				19B382DD2ACF6A4D00BDB37C /* LaunchScreen.storyboard in Resources */,
 				19B382F02ACF6A4D00BDB37C /* Assets.xcassets in Resources */,
 				19B382EE2ACF6A4D00BDB37C /* Art.scnassets in Resources */,
@@ -223,6 +232,7 @@
 			files = (
 				19B382EA2ACF6A4D00BDB37C /* Main.storyboard in Resources */,
 				19B382F12ACF6A4D00BDB37C /* Assets.xcassets in Resources */,
+				193006F52AD4B38B0097B292 /* Model.scnassets in Resources */,
 				19B382EF2ACF6A4D00BDB37C /* Art.scnassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192E296A2AD4C493003B4EEF /* Camera.swift in Sources */,
 				19B382D72ACF6A4D00BDB37C /* GameViewController.swift in Sources */,
 				1981FE922AD30D6E00D6F0FF /* SCNCamera+Extensions.swift in Sources */,
 				19B382EC2ACF6A4D00BDB37C /* GameController.swift in Sources */,
@@ -248,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192E296B2AD4C493003B4EEF /* Camera.swift in Sources */,
 				19B382E72ACF6A4D00BDB37C /* GameViewController.swift in Sources */,
 				1981FE932AD30F5D00D6F0FF /* SCNCamera+Extensions.swift in Sources */,
 				19B382ED2ACF6A4D00BDB37C /* GameController.swift in Sources */,

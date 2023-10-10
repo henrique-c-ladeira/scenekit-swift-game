@@ -24,11 +24,18 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     init(sceneRenderer renderer: SCNSceneRenderer) {
         sceneRenderer = renderer
         scene = SCNScene(named: "Art.scnassets/stage1.scn")!
-        
-        let blockScene = SCNScene(named: "Art.scnassets/obstacle.scn")!
+//        scene = SCNScene()
+        let lightNode = SCNNode()
+        let light = SCNLight()
+        light.type = .omni // Isso cria uma luz omnidirecional
+        lightNode.light = light
+        light.intensity = 10000 // Ajuste o valor conforme necessário
+        lightNode.position = SCNVector3(x: 0, y: 5, z: 0) // Ajuste a posição da luz conforme necessário
+        scene.rootNode.addChildNode(lightNode)
         
         self.camera = scene.rootNode.childNode(withName: "camera", recursively: true)!
         player = Player(from: "player.scn")
+//        camera = Camera()
         
         super.init()
         
@@ -36,18 +43,25 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         
         camera.anchor(to: player.node)
         
-        let floor = scene.rootNode.childNode(withName: "plane", recursively: true)!
+        let floorGeometry = SCNBox(width: 50, height: 0.1, length: 500, chamferRadius: 0)
+        let floor = SCNNode(geometry: floorGeometry)
+        let material = SCNMaterial()
+        material.diffuse.contents =  NSColor.red// Configurar a cor do material
+        floor.geometry?.firstMaterial = material
         
-        floor.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry: floor.geometry!))
+        floor.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry: floorGeometry))
+        floor.position = SCNVector3(0,0,0)
         
+        let blockScene = SCNScene(named: "Art.scnassets/obstacle.scn")!
         let block = blockScene.rootNode.childNode(withName: "obstacle", recursively: true)!
         
         for index in (0...100) {
             let newBlock = SCNNode(geometry: block.geometry);
             newBlock.name = "block\(index)"
-            newBlock.rotation = SCNVector4(Double.pi,0,Double.pi,Double.pi)
+            
+//            newBlock.rotation = SCNVector4(Double.pi,0,Double.pi,Double.pi)
             newBlock.position.x = CGFloat.random(in: -1...1)
-            newBlock.position.y = 0.5
+            newBlock.position.y = 10
             newBlock.position.z =  10 * CGFloat(index + 1)
             newBlock.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: newBlock.geometry!))
             scene.rootNode.addChildNode(newBlock)
@@ -55,6 +69,8 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         
         
         player.addToScene(scene)
+//        camera.addToScene(scene)
+        scene.rootNode.addChildNode(floor)
         sceneRenderer.scene = scene
     }
     
@@ -94,6 +110,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
             player.node.position.z = 0
         }
         camera.anchor(to: player.node)
+        
     }
 
 }
