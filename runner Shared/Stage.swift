@@ -32,12 +32,12 @@ class Stage {
         let blockScene = SCNScene(named: "Art.scnassets/obstacle.scn")!
         let block = blockScene.rootNode.childNode(withName: "obstacle", recursively: true)!
         
-        for index in (0...1000) {
+        for index in (0...100) {
             let newBlock = SCNNode(geometry: block.geometry);
             newBlock.name = "block\(index)"
-            newBlock.position.x = CGFloat.random(in: -5...5)
-            newBlock.position.y = 10
-            newBlock.position.z =  10 * CGFloat(index + 1)
+            newBlock.position.x = CGFloat.random(in: -10...5)
+            newBlock.position.y = CGFloat.random(in: 10...20)
+            newBlock.position.z =  CGFloat.random(in: 5...200)
             newBlock.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: newBlock.geometry!))
             scene.rootNode.addChildNode(newBlock)
         }

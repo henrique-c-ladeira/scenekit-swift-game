@@ -26,14 +26,14 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         stage = Stage();
         let scene = stage.scene
         
-        player = Player(from: "player.scn")
+        player = Player(from: "abra.scn")
         camera = Camera()
         super.init()
         
         sceneRenderer.delegate = self
         
         player.addToScene(scene)
-        camera.addToScene(scene)
+        camera.addToNode(player.node)
         sceneRenderer.scene = scene
     }
     
@@ -42,7 +42,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         if(player.node.position.z > 80) {
             player.node.position.z = 0
         }
-        camera.anchor(to: player.node)
+        camera.node.eulerAngles = SCNVector3(x: camera.node.eulerAngles.x, y: camera.node.eulerAngles.y, z: Double.pi)
         
     }
 }
