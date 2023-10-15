@@ -27,7 +27,11 @@ class CameraNode: SCNNode {
     }
     
     func bind(to node: SCNNode) {
-        runAction(SCNAction.move(to: node.worldPosition, duration: 0.1))
+        let action = SCNAction.group([
+            SCNAction.move(to: node.position, duration: 0.1),
+            SCNAction.rotateTo(x: node.rotation.x, y: node.rotation.y, z: node.rotation.z, duration: 0.1)
+        ])
+        runAction(action)
 //        node.addChildNode(self)
 //        runAction(SCNAction.move(to: node.position, duration: 0.1))
     }

@@ -76,10 +76,12 @@ class GameViewController: NSViewController {
         print(event.keyCode)
         switch (event.keyCode) {
         case 0: gameController.levelScene.player.moveLeft(); break
+        case 1: gameController.levelScene.player.moveBack(); break
         case 2: gameController.levelScene.player.moveRight(); break
         case 12: gameController.levelScene.player.rotate(by: 0.1); break
-        case 13: gameController.levelScene.player.runAction(SCNAction.moveBy(x: 0, y: 0, z: 0.05, duration: 0.1)); break
-        case 14:gameController.levelScene.player.rotate(by: -0.1); break
+        case 13: gameController.levelScene.player.moveForward(); break
+        case 49: gameController.levelScene.player.jump(); break
+        case 14: gameController.levelScene.player.rotate(by: -0.1); break
         default:
             break
         }
