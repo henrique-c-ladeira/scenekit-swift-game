@@ -9,6 +9,7 @@ import SceneKit
 
 #if os(macOS)
     typealias SCNColor = NSColor
+    typealias Float = CGFloat
 #else
     typealias SCNColor = UIColor
 #endif

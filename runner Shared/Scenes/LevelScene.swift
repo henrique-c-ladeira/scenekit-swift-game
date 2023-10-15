@@ -28,7 +28,7 @@ class LevelScene: SCNScene {
         let floorGeometry = SCNBox(width: 50, height: 0.1, length: 500, chamferRadius: 0)
         let floor = SCNNode(geometry: floorGeometry)
         let material = SCNMaterial()
-        material.diffuse.contents =  NSColor.lightGray
+        material.diffuse.contents =  SCNColor.lightGray
         floor.geometry?.firstMaterial = material
         floor.physicsBody = SCNPhysicsBody(type: .static, shape: SCNPhysicsShape(geometry: floorGeometry))
         floor.position = SCNVector3(0,0,0)
@@ -39,9 +39,9 @@ class LevelScene: SCNScene {
         for index in (0...100) {
             let newBlock = SCNNode(geometry: block.geometry);
             newBlock.name = "block\(index)"
-            newBlock.position.x = CGFloat.random(in: -10...5)
-            newBlock.position.y = CGFloat.random(in: 10...20)
-            newBlock.position.z =  CGFloat.random(in: 5...200)
+            newBlock.position.x = Float.random(in: -10...5)
+            newBlock.position.y = Float.random(in: 10...20)
+            newBlock.position.z =  Float.random(in: 5...200)
             newBlock.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: newBlock.geometry!))
             rootNode.addChildNode(newBlock)
         }
