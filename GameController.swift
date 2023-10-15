@@ -17,33 +17,20 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     
     let sceneRenderer: SCNSceneRenderer
     
-    let player: Player
-    let camera: Camera
-    let stage: Stage
+    let levelScene: LevelScene
     
     init(sceneRenderer renderer: SCNSceneRenderer) {
         sceneRenderer = renderer
-        stage = Stage();
-        let scene = stage.scene
+        levelScene = LevelScene();
         
-        player = Player(from: "abra.scn")
-        camera = Camera()
         super.init()
         
         sceneRenderer.delegate = self
-        
-        player.addToScene(scene)
-        camera.addToNode(player.node)
-        sceneRenderer.scene = scene
+        sceneRenderer.scene = levelScene
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        // Called before each frame is rendered
-        if(player.node.position.z > 80) {
-            player.node.position.z = 0
-        }
-        camera.node.eulerAngles = SCNVector3(x: camera.node.eulerAngles.x, y: camera.node.eulerAngles.y, z: Double.pi)
-        
+        levelScene.update()
     }
 }
 

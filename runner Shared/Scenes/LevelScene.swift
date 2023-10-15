@@ -7,11 +7,15 @@
 
 import SceneKit
 
-class Stage {
-    let scene: SCNScene
+class LevelScene: SCNScene {
     
-    init() {
-        scene = SCNScene()
+    let player: PlayerNode
+    let camera: CameraNode
+    
+    override init() {
+        player = PlayerNode(from: "abra.scn")
+        camera = CameraNode()
+        super.init()
         
         let lightNode = SCNNode()
         let light = SCNLight()
@@ -19,7 +23,7 @@ class Stage {
         lightNode.light = light
         light.intensity = 10000
         lightNode.position = SCNVector3(x: 0, y: 5, z: 0)
-        scene.rootNode.addChildNode(lightNode)
+        rootNode.addChildNode(lightNode)
         
         let floorGeometry = SCNBox(width: 50, height: 0.1, length: 500, chamferRadius: 0)
         let floor = SCNNode(geometry: floorGeometry)
@@ -39,9 +43,23 @@ class Stage {
             newBlock.position.y = CGFloat.random(in: 10...20)
             newBlock.position.z =  CGFloat.random(in: 5...200)
             newBlock.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: newBlock.geometry!))
-            scene.rootNode.addChildNode(newBlock)
+            rootNode.addChildNode(newBlock)
         }
         
-        scene.rootNode.addChildNode(floor)
+        rootNode.addChildNode(floor)
+        rootNode.addChildNode(camera)
+        rootNode.addChildNode(player)
+    }
+    
+    func update() {
+        bindCamera()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func bindCamera() {
+        camera.bind(to: player)
     }
 }

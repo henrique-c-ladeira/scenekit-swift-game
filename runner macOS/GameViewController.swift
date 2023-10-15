@@ -49,20 +49,19 @@ class GameViewController: NSViewController {
     @objc
     override func mouseDragged(with event: NSEvent) {
         
-        print(event)
         guard let lastLocation = lastMouseLocation else {
             lastMouseLocation = event.locationInWindow
             return
         }
 
         let location = event.locationInWindow
-        let deltaX = event.deltaX
-        let deltaY = event.deltaY
+//        let deltaX = event.deltaX
+//        let deltaY = event.deltaY
 
-        let sensitivity: CGFloat = 0.005
+//        let sensitivity: CGFloat = 0.005
 //        gameController.camera.rotate(by: -deltaX * sensitivity, around: SCNVector3(0,1,0))
 //        gameController.camera.rotate(by: deltaY * sensitivity, around: SCNVector3(1,0,0))
-        gameController.camera.rotateOnPointOfView(dx: deltaX, dy: deltaY)
+//        gameController.levelScene.camera.rotateOnPointOfView(dx: deltaX, dy: deltaY)
         lastMouseLocation = location
 
         if event.type == .leftMouseUp {
@@ -76,11 +75,11 @@ class GameViewController: NSViewController {
     override func keyDown(with event: NSEvent) {
         print(event.keyCode)
         switch (event.keyCode) {
-        case 0: gameController.player.moveLeft(); break
-        case 2: gameController.player.moveRight(); break
-        case 12: gameController.player.rotate(by: 0.1); break
-        case 13: gameController.player.jump(); break
-        case 14:gameController.player.rotate(by: -0.1); break
+        case 0: gameController.levelScene.player.moveLeft(); break
+        case 2: gameController.levelScene.player.moveRight(); break
+        case 12: gameController.levelScene.player.rotate(by: 0.1); break
+        case 13: gameController.levelScene.player.runAction(SCNAction.moveBy(x: 0, y: 0, z: 0.05, duration: 0.1)); break
+        case 14:gameController.levelScene.player.rotate(by: -0.1); break
         default:
             break
         }
