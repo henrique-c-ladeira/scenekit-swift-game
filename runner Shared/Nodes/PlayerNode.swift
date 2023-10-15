@@ -36,8 +36,8 @@ class PlayerNode: SCNNode {
     }
     
     func moveForward() {
-        print(rotation)
-        runAction(SCNAction.moveBy(x: sin(rotation.y), y: 0, z: cos(rotation.y), duration: 0.1))
+        let velocity = Float(2)
+        runAction(SCNAction.moveBy(x: velocity * sin(rotation.y), y: 0, z: velocity * cos(rotation.y), duration: 1.0))
     }
     
     func moveBack() {
