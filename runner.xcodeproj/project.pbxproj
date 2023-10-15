@@ -34,6 +34,7 @@
 		192E29692AD4C493003B4EEF /* CameraNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraNode.swift; sourceTree = "<group>"; };
 		192E296F2AD4E227003B4EEF /* LevelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		193006F32AD4B38B0097B292 /* Model.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Model.scnassets; sourceTree = "<group>"; };
+		196462122ADC2FCA0043E3D5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1981FE9A2AD345EE00D6F0FF /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 		19B382CA2ACF6A4D00BDB37C /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		19B382CB2ACF6A4D00BDB37C /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		19B382C42ACF6A4C00BDB37C = {
 			isa = PBXGroup;
 			children = (
+				196462122ADC2FCA0043E3D5 /* README.md */,
 				19B382C92ACF6A4D00BDB37C /* runner Shared */,
 				19B382CA2ACF6A4D00BDB37C /* GameController.swift */,
 				19B382D32ACF6A4D00BDB37C /* runner iOS */,
